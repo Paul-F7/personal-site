@@ -71,15 +71,15 @@ export default function ProjectCard({
             {description}
           </p>
 
-          <div className="flex gap-1.5 mt-1" onClick={(e) => e.stopPropagation()}>
+          <div className="flex gap-2 mt-1" onClick={(e) => e.stopPropagation()}>
             {github && (
               <a
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-1.5 rounded-lg text-neutral-400 dark:text-neutral-600 hover:text-neutral-700 dark:hover:text-neutral-300 hover:bg-black/5 dark:hover:bg-white/5 transition-all"
+                className="p-1.5 rounded-lg text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-black/5 dark:hover:bg-white/8 transition-all"
               >
-                <GitBranch className="w-3.5 h-3.5" />
+                <GitBranch className="w-4 h-4" />
               </a>
             )}
             {demo && (
@@ -87,9 +87,9 @@ export default function ProjectCard({
                 href={demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-1.5 rounded-lg text-neutral-400 dark:text-neutral-600 hover:text-neutral-700 dark:hover:text-neutral-300 hover:bg-black/5 dark:hover:bg-white/5 transition-all"
+                className="p-1.5 rounded-lg text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-black/5 dark:hover:bg-white/8 transition-all"
               >
-                <SquareArrowOutUpRight className="w-3.5 h-3.5" />
+                <SquareArrowOutUpRight className="w-4 h-4" />
               </a>
             )}
           </div>
