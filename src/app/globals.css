@@ -52,14 +52,22 @@ html.theme-transitioning * {
 
 html {
   min-height: 100%;
-  background: transparent;
+  background: #ffffff;
+}
+
+html.dark {
+  background: #000000;
 }
 
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  background: transparent;
+  background: #ffffff;
   position: relative;
+}
+
+.dark body {
+  background: #000000;
 }
 
 @keyframes fade-in {
