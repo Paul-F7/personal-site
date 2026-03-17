@@ -27,6 +27,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{
+          __html: `(function(){var t=localStorage.getItem('theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark');})();`
+        }} />
         {projectImages.map((src) => (
           <link key={src} rel="prefetch" href={src} as="image" />
         ))}
