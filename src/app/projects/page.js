@@ -1,9 +1,6 @@
 "use client";
 
-import Link from "../components/Link";
 import ProjectList from "../components/ProjectList";
-import { useState } from "react";
-import { Search } from "lucide-react";
 
 export default function Projects() {
   const projects = [
@@ -66,39 +63,5 @@ export default function Projects() {
     },
   ];
 
-  const [searchTerm, setSearchTerm] = useState("");
-
-  return (
-    <>
-      <div className="relative">
-        <Search className="absolute top-2.5 left-3 size-6 text-stone-400" />
-        <input
-          type="text"
-          placeholder="search for a project, technology, etc."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full py-2 px-4 border border-stone-400 rounded-md bg-transparent focus:outline-none focus:border-stone-700 pl-10 backdrop-blur-sm"
-        />
-      </div>
-      <ProjectList
-        projects={projects.filter(
-          (project) =>
-            project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            project.description
-              .toLowerCase()
-              .includes(searchTerm.toLowerCase()) ||
-            project.technologies.some((technology) =>
-              technology.toLowerCase().includes(searchTerm.toLowerCase())
-            )
-        )}
-      />
-      <p>
-        You can check out the rest of my projects{" "}
-        <Link href="https://github.com/yourusername?tab=repositories&q=&type=source">
-          here
-        </Link>
-        .
-      </p>
-    </>
-  );
+  return <ProjectList projects={projects} />;
 }
