@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbar styles */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f5f5f4;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #d6d3d1;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a29e;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: #292524;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #44403c;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #57534e;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #d6d3d1 #f5f5f4;
+  }
+
+  .dark * {
+    scrollbar-color: #44403c #292524;
+  }
+}
+
+/* Smooth theme transitions */
+html.theme-transitioning,
+html.theme-transitioning * {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease !important;
+}
+
+html {
+  min-height: 100%;
+  background: transparent;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: transparent;
+  position: relative;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 150ms ease;
+}
+
+.animate-slide-down {
+  animation: slide-down 150ms ease;
+}
