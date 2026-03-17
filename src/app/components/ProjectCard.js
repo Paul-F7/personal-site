@@ -69,7 +69,7 @@ export default function ProjectCard({
             )}
           </div>
 
-          <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-3">
+          <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
             {description}
           </p>
 
