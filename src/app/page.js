@@ -102,7 +102,7 @@ export default function About() {
               </span>
               <span className="text-stone-600 dark:text-stone-400">
                 <Image src={FeelifyLogo} alt="Feelify" width={18} height={18} className="inline rounded-sm mr-1 align-middle" />
-                <Link href="#" className="font-medium">Feelify</Link> — ML song mood detection app, predicting emotion from mp3 files
+                <Link href="https://feelify.paulfom.ca" className="font-medium">Feelify</Link> — ML song mood detection app, predicting emotion from mp3 files
               </span>
             </li>
             <li className="relative flex items-start gap-4 group/item">
@@ -111,7 +111,7 @@ export default function About() {
               </span>
               <span className="text-stone-600 dark:text-stone-400">
                 <Image src={HandInHandLogo} alt="Hand in Hand" width={18} height={18} className="inline rounded-sm mr-1 align-middle" />
-                <Link href="#" className="font-medium">Hand in Hand</Link> — Duolingo for ASL with live gesture feedback
+                <Link href="https://handinhand.paulfom.ca" className="font-medium">Hand in Hand</Link> — Duolingo for ASL with live gesture feedback
               </span>
             </li>
             <li className="relative flex items-start gap-4 group/item">
@@ -119,7 +119,7 @@ export default function About() {
                 &#8627;
               </span>
               <span className="text-stone-600 dark:text-stone-400">
-                computer vision <Link href="#" className="font-medium">Sudoku Solver</Link> with 99%+ accuracy
+                computer vision <Link href="https://github.com/Paul-F7/cv-sudokusolver" className="font-medium">Sudoku Solver</Link> with 99%+ accuracy
               </span>
             </li>
           </ul>

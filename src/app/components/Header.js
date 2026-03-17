@@ -6,7 +6,7 @@ import Link from "./Link";
 import { useTheme } from "./ThemeProvider";
 import { Moon, Sun } from "lucide-react";
 
-export default function Header({ className }) {
+export default function Header() {
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
 
@@ -28,7 +28,7 @@ export default function Header({ className }) {
   return (
     <div className="flex justify-between items-center">
       <h1 className="text-neutral-700 dark:text-neutral-300 font-semibold">
-        <Link href="/" isNextLink={true}>
+        <Link href="/" isNextLink={true} isActive={pathname === "/" ? true : undefined}>
           paul fomitchev
         </Link>
       </h1>

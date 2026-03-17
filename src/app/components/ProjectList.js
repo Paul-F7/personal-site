@@ -2,9 +2,9 @@ import ProjectCard from "./ProjectCard";
 
 export default function ProjectList({ projects }) {
   return (
-    <div className="grid grid-cols-1 gap-4">
+    <div className="flex flex-col divide-y divide-stone-200/60 dark:divide-white/[0.06]">
       {projects.map((project, index) => (
-        <ProjectCard key={index} {...project} />
+        <ProjectCard key={index} index={index} {...project} />
       ))}
     </div>
   );

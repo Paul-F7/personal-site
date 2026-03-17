@@ -1,23 +1,14 @@
-import { Github, SquareArrowOutUpRight } from "lucide-react";
+"use client";
 
-const shimmer = `
-<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <linearGradient id="g">
-      <stop stop-color="#333" offset="20%" />
-      <stop stop-color="#222" offset="50%" />
-      <stop stop-color="#333" offset="70%" />
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="#333" />
-  <rect id="r" width="100%" height="100%" fill="url(#g)" />
-  <animate xlink:href="#r" attributeName="x" from="-100%" to="100%" dur="1s" repeatCount="indefinite" />
-</svg>`;
+import { GitBranch, SquareArrowOutUpRight } from "lucide-react";
 
-const toBase64 = (str) =>
-  typeof window === "undefined"
-    ? Buffer.from(str).toString("base64")
-    : window.btoa(str);
+const placeholderGradients = [
+  "from-stone-200 to-stone-300 dark:from-stone-800 dark:to-stone-700",
+  "from-neutral-200 to-zinc-300 dark:from-neutral-800 dark:to-zinc-700",
+  "from-zinc-200 to-stone-300 dark:from-zinc-800 dark:to-stone-700",
+  "from-stone-300 to-neutral-200 dark:from-stone-700 dark:to-neutral-800",
+  "from-zinc-300 to-neutral-200 dark:from-zinc-700 dark:to-neutral-800",
+];
 
 export default function ProjectCard({
   title,
@@ -26,48 +17,69 @@ export default function ProjectCard({
   technologies,
   github,
   demo,
+  icon,
+  image,
+  imageSize = "h-24",
+  index = 0,
   className,
 }) {
+  const gradient = placeholderGradients[index % placeholderGradients.length];
+  const initials = title.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+
   return (
-    <div
-      className={`group bg-neutral-100/80 dark:bg-neutral-900/80 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm ${className}`}
-    >
-      <div className="p-5">
-        <div className="flex justify-between items-start gap-4">
-          <div>
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-800 dark:text-neutral-200 font-medium text-2xl hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors duration-200 block"
-            >
-              {title}
-            </a>
-            <p className="text-neutral-600 dark:text-neutral-400 mt-2 leading-relaxed">
-              {description}
-            </p>
+    <>
+      <div
+        onClick={() => href && window.open(href, "_blank")}
+        className={`group flex gap-6 cursor-pointer py-6 px-0 overflow-visible rounded-t-xl border-t border-transparent hover:border-stone-300/60 dark:hover:border-white/[0.08] hover:bg-gradient-to-r hover:from-transparent hover:via-black/[0.03] hover:to-transparent dark:hover:via-white/[0.04] hover:-translate-y-0.5 transition-all duration-200 ${className}`}
+      >
+        {/* Thumbnail — always shows image */}
+        <div className="shrink-0 flex items-center">
+          {image ? (
+            <img src={image?.src ?? image} alt={title} className={`${imageSize} w-auto rounded-xl object-contain`} />
+          ) : (
+            <div className={`${imageSize} w-24 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center`}>
+              {icon ? (
+                <img src={icon?.src ?? icon} alt={title} className="w-10 h-10 rounded-lg object-cover" />
+              ) : (
+                <span className="text-lg font-light tracking-widest text-neutral-400 dark:text-neutral-600 select-none">
+                  {initials}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 min-w-0 flex flex-col justify-center gap-1.5">
+          <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5">
+            <span className="flex items-center gap-1.5">
+              {icon && (
+                <img src={icon?.src ?? icon} alt={title} className="w-4 h-4 rounded-md object-cover inline-block translate-y-[1px]" />
+              )}
+              <span className="text-sm font-medium text-neutral-800 dark:text-neutral-100">
+                {title}
+              </span>
+            </span>
             {technologies && technologies.length > 0 && (
-              <div className="flex flex-wrap gap-1.5 mt-3">
-                {technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="text-xs px-2 py-0.5 rounded-full bg-stone-200/80 dark:bg-stone-800/80 text-stone-600 dark:text-stone-400"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              <span className="text-xs text-neutral-400 dark:text-neutral-600 font-light">
+                {technologies.join(" / ")}
+              </span>
             )}
           </div>
-          <div className="flex gap-2 shrink-0">
+
+          <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-3">
+            {description}
+          </p>
+
+          <div className="flex gap-1.5 mt-1" onClick={(e) => e.stopPropagation()}>
             {github && (
               <a
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+                className="p-1.5 rounded-lg text-neutral-400 dark:text-neutral-600 hover:text-neutral-700 dark:hover:text-neutral-300 hover:bg-black/5 dark:hover:bg-white/5 transition-all"
               >
-                <Github className="w-5 h-5" />
+                <GitBranch className="w-3.5 h-3.5" />
               </a>
             )}
             {demo && (
@@ -75,14 +87,15 @@ export default function ProjectCard({
                 href={demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+                className="p-1.5 rounded-lg text-neutral-400 dark:text-neutral-600 hover:text-neutral-700 dark:hover:text-neutral-300 hover:bg-black/5 dark:hover:bg-white/5 transition-all"
               >
-                <SquareArrowOutUpRight className="w-5 h-5" />
+                <SquareArrowOutUpRight className="w-3.5 h-3.5" />
               </a>
             )}
           </div>
         </div>
       </div>
-    </div>
+
+    </>
   );
 }

@@ -1,30 +1,25 @@
-import { Twitter, Linkedin, Github, Mail, CodeXml } from "lucide-react";
+import { Linkedin, Github, Mail, CodeXml } from "lucide-react";
 
 export default function Footer({ className }) {
   const links = [
     {
-      name: "x",
-      href: "https://x.com/yourusername",
-      icon: Twitter,
-    },
-    {
-      name: "linkedin",
-      href: "https://www.linkedin.com/in/yourusername/",
-      icon: Linkedin,
-    },
-    {
       name: "github",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/PAul-F7",
       icon: Github,
     },
     {
+      name: "linkedin",
+      href: "https://www.linkedin.com/in/paul-fomitchev/",
+      icon: Linkedin,
+    },
+    {
       name: "email",
-      href: "mailto:your@email.com",
+      href: "mailto:paul.fomitchev@uwaterloo.ca",
       icon: Mail,
     },
     {
       name: "repo",
-      href: "https://github.com/yourusername/personal-site",
+      href: "https://github.com/Paul-F7/personal-site",
       icon: CodeXml,
     },
   ];
@@ -56,8 +51,8 @@ export default function Footer({ className }) {
             </a>
           ))}
         </div>
+        <p>{new Date().getFullYear()} &copy; Paul Fomitchev</p>
       </div>
-      <p>{new Date().getFullYear()} &copy; Paul Fomitchev</p>
     </footer>
   );
 }

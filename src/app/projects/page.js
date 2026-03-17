@@ -1,65 +1,72 @@
 "use client";
 
 import ProjectList from "../components/ProjectList";
+import FlavorFlickLogo from "../../../assets/flavorflick.png";
+import FlavorFlickScreenshot from "../../../assets/flavorflick-screenshot.png";
+import FeelifyLogo from "../../../assets/feelify.webp";
+import FeelifyScreenshot from "../../../assets/feelify-screenshot.png";
+import HandInHandLogo from "../../../assets/handinhand.png";
+import HandInHandScreenshot from "../../../assets/handinhand-screenshot.png";
+import SudokuScreenshot from "../../../assets/sudokusolver-screenshot.png";
+import KinKitchenScreenshot from "../../../assets/kinkitchen-screenshot.png";
 
 export default function Projects() {
   const projects = [
     {
-      title: "Vibe Draw",
-      href: "https://tryvibedraw.com",
+      title: "FlavorFlick",
+      href: "https://flavorflick.ca",
       description:
-        "the Cursor + Midjourney for 3D modeling. Create beautiful 3D assets from your roughest sketches in seconds. 3M+ views, 1,900+ stars.",
-      technologies: [
-        "Python",
-        "FastAPI",
-        "React",
-        "Next.js",
-        "Three.js",
-        "TypeScript",
-        "Google Cloud Platform",
-      ],
-      github: "https://github.com/martin226/vibe-draw",
-      demo: "https://tryvibedraw.com",
+        "An AI \"Tinder-Style\" Recipe Mobile App with Personalized Taste Learning",
+      technologies: ["React Native", "Fast API", "PostgreSQL"],
+      github: "https://github.com/Paul-F7/recipe-app",
+      demo: "https://flavorflick.ca",
+      icon: FlavorFlickLogo,
+      image: FlavorFlickScreenshot,
+      imageSize: "h-44",
+      video: "/flavorflick-demo.mov",
     },
     {
-      title: "Slide it In",
-      href: "https://justslideitin.com",
+      title: "Feelify",
+      href: "https://feelify.paulfom.ca",
       description:
-        "a powerful presentation generator that transforms documents into beautiful slide decks using AI. 1,000+ users in 24 hours.",
-      technologies: ["Go", "Next.js", "Google Cloud Platform"],
-      github: "https://github.com/martin226/slideitin",
-      demo: "https://justslideitin.com",
+        "A Machine Learning web app that gets the mood of a song from its MP3.",
+      technologies: ["Librosa", "Sci-kit Learn"],
+      github: "https://github.com/Paul-F7/song-MoodDetector",
+      demo: "https://feelify.paulfom.ca",
+      icon: FeelifyLogo,
+      image: FeelifyScreenshot,
     },
     {
-      title: "Make It Jake's",
-      href: "https://jakesresu.me",
+      title: "Hand in Hand",
+      href: "https://handinhand.paulfom.ca",
       description:
-        "a website for turning any resume into Jake's Resume template. 10,000+ users, idea to production in < 2 days.",
-      technologies: [
-        "Ruby on Rails",
-        "Remix.js",
-        "Redis",
-        "Google Cloud Platform",
-      ],
-      github: "https://github.com/martin226/makeitjakes",
-      demo: "https://jakesresu.me",
+        "Douling for ASL App that lets you practice ASL movements with smart feedback",
+      technologies: ["Media Pipe", "Gemini API"],
+      github: "https://github.com/Paul-F7/hand-in-hand",
+      demo: "https://handinhand.paulfom.ca",
+      icon: HandInHandLogo,
+      image: HandInHandScreenshot,
+      youtubeUrl: "https://www.youtube.com/embed/c20ZzmhjI_M",
     },
     {
-      title: "Twirl",
-      href: "https://dorahacks.io/buidl/21695",
+      title: "CV Sudoku Solver",
+      href: "https://github.com/Paul-F7/cv-sudokusolver",
       description:
-        "an AI agent for turning text/images into 3D-printable models. Made in 36h for UofTHacks 2025, 2nd place overall + best use of generative AI.",
-      technologies: [
-        "Python",
-        "FastAPI",
-        "React",
-        "Next.js",
-        "Three.js",
-        "OpenSCAD",
-        "Azure",
-      ],
-      github: "https://github.com/martin226/twirl",
-      demo: "https://www.youtube.com/watch?v=8JtZbi48wHM",
+        "A computer vision pipeline that detects Sudoku puzzles in photos and solves them.",
+      technologies: ["Python", "OpenCV", "YOLO"],
+      github: "https://github.com/Paul-F7/cv-sudokusolver",
+      image: SudokuScreenshot,
+    },
+    {
+      title: "KinKitchen",
+      href: "https://github.com/Paul-F7/kin-kitchen",
+      description:
+        "Take a photo of your ingredients, get recommended recipes, then simulate instructions in 3d generated environment.",
+      technologies: ["Cloudinary", "Three.js", "React"],
+      github: "https://github.com/Paul-F7/kin-kitchen",
+      image: KinKitchenScreenshot,
+      imageSize: "h-28",
+      youtubeUrl: "https://www.youtube.com/embed/1M8MoqCxQCI",
     },
   ];
 
