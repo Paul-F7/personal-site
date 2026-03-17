@@ -5,13 +5,13 @@ function SplashCursor({
   SIM_RESOLUTION = 128,
   DYE_RESOLUTION = 1440,
   CAPTURE_RESOLUTION = 512,
-  DENSITY_DISSIPATION = 2.08,
-  VELOCITY_DISSIPATION = 1.19,
+  DENSITY_DISSIPATION = 9.0,
+  VELOCITY_DISSIPATION = 3.0,
   PRESSURE = 0.1,
   PRESSURE_ITERATIONS = 20,
-  CURL = 3,
-  SPLAT_RADIUS = 0.217,
-  SPLAT_FORCE = 9000,
+  CURL = 1,
+  SPLAT_RADIUS = 0.09,
+  SPLAT_FORCE = 2000,
   SHADING = true,
   COLOR_UPDATE_SPEED = 10,
   BACK_COLOR = { r: 0.5, g: 0, b: 0 },
@@ -1105,8 +1105,8 @@ function SplashCursor({
 
     function generateColor() {
       const hue = Math.random();
-      const saturation = 0.85 + Math.random() * 0.15;
-      const value = 0.45 + Math.random() * 0.2;
+      const saturation = 0.35 + Math.random() * 0.15;
+      const value = 0.15 + Math.random() * 0.08;
       let c = HSVtoRGB(hue, saturation, value);
       return c;
     }
@@ -1323,7 +1323,7 @@ function SplashCursor({
       />
       <div
         className="fixed top-0 left-0 right-0 bottom-0 pointer-events-none"
-        style={{ zIndex: -1 }}
+        style={{ zIndex: 50 }}
       >
         <canvas
           ref={canvasRef}

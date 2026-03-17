@@ -62,12 +62,8 @@ html.dark {
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  background: #ffffff;
+  background: transparent;
   position: relative;
-}
-
-.dark body {
-  background: #000000;
 }
 
 @keyframes fade-in {
