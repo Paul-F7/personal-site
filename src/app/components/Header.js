@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <div className="flex justify-between items-center">
-      <h1 className="text-neutral-700 dark:text-neutral-300 font-semibold">
+      <h1 className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 font-semibold">
         <Link href="/" isNextLink={true} isActive={pathname === "/" ? true : undefined}>
           paul fomitchev
         </Link>

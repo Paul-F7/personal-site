@@ -28,8 +28,10 @@ export default function ProjectCard({
 
   return (
     <>
-      <div
-        onClick={() => href && window.open(href, "_blank")}
+      <a
+        href={href || "#"}
+        target="_blank"
+        rel="noopener noreferrer"
         className={`group flex gap-6 cursor-pointer py-6 px-0 overflow-visible rounded-t-xl border-t border-transparent hover:border-stone-300/60 dark:hover:border-white/[0.08] hover:bg-gradient-to-r hover:from-transparent hover:via-black/[0.03] hover:to-transparent dark:hover:via-white/[0.04] hover:-translate-y-0.5 transition-all duration-200 ${className}`}
       >
         {/* Thumbnail — always shows image */}
@@ -71,30 +73,26 @@ export default function ProjectCard({
             {description}
           </p>
 
-          <div className="flex gap-2 mt-1" onClick={(e) => e.stopPropagation()}>
+          <div className="flex gap-2 mt-1">
             {github && (
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(github, "_blank"); }}
                 className="p-1.5 rounded-lg text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-black/5 dark:hover:bg-white/8 transition-all"
               >
                 <GitBranch className="w-4 h-4" />
-              </a>
+              </button>
             )}
             {demo && (
-              <a
-                href={demo}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(demo, "_blank"); }}
                 className="p-1.5 rounded-lg text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-black/5 dark:hover:bg-white/8 transition-all"
               >
                 <SquareArrowOutUpRight className="w-4 h-4" />
-              </a>
+              </button>
             )}
           </div>
         </div>
-      </div>
+      </a>
 
     </>
   );
