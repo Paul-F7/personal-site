@@ -33,9 +33,9 @@ export default function ProjectCard({
         className={`group flex gap-6 cursor-pointer py-6 px-0 overflow-visible rounded-t-xl border-t border-transparent hover:border-stone-300/60 dark:hover:border-white/[0.08] hover:bg-gradient-to-r hover:from-transparent hover:via-black/[0.03] hover:to-transparent dark:hover:via-white/[0.04] hover:-translate-y-0.5 transition-all duration-200 ${className}`}
       >
         {/* Thumbnail — always shows image */}
-        <div className="shrink-0 flex items-center">
+        <div className="shrink-0 w-40 flex justify-center items-start">
           {image ? (
-            <img src={image?.src ?? image} alt={title} className={`${imageSize} w-auto rounded-xl object-contain`} />
+            <img src={image?.src ?? image} alt={title} className={`${imageSize} w-auto max-w-full rounded-xl object-contain`} />
           ) : (
             <div className={`${imageSize} w-24 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center`}>
               {icon ? (
@@ -50,7 +50,7 @@ export default function ProjectCard({
         </div>
 
         {/* Content */}
-        <div className="flex-1 min-w-0 flex flex-col justify-center gap-1.5">
+        <div className="flex-1 min-w-0 flex flex-col justify-start gap-1.5">
           <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5">
             <span className="flex items-center gap-1.5">
               {icon && (
