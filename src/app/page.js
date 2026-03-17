@@ -3,7 +3,6 @@
 import Link from "./components/Link";
 import NextLink from "next/link";
 import Image from "next/image";
-import { GalleryHorizontalEnd } from "lucide-react";
 import UWaterlooLogo from "../../assets/UWaterloo.png";
 import FlavorFlickLogo from "../../assets/flavorflick.png";
 import OrbitalLogo from "../../assets/orbital.png";
@@ -129,10 +128,9 @@ export default function About() {
 
       <NextLink
         href="/projects"
-        className="text-center mt-4 py-4 px-6 rounded-lg border border-stone-400 dark:border-stone-600 bg-stone-50/80 dark:bg-stone-900/80 text-stone-600 dark:text-stone-400 transform transition-all duration-300 font-extralight hover:scale-[1.02] active:scale-[0.98] shadow-sm backdrop-blur-sm"
+        className="text-center mt-8 py-4 px-6 rounded-lg border border-stone-400 dark:border-stone-600 bg-stone-50/80 dark:bg-stone-900/80 text-stone-600 dark:text-stone-400 transform transition-all duration-300 font-semibold text-lg hover:scale-[1.02] active:scale-[0.98] shadow-sm backdrop-blur-sm"
       >
-        see what i&apos;ve built{" "}
-        <GalleryHorizontalEnd className="size-5 inline align-top ml-1 transition-transform group-hover:rotate-3" />
+        View My Projects
       </NextLink>
     </div>
   );
