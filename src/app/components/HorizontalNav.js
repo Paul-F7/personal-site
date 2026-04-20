@@ -9,9 +9,9 @@ export default function HorizontalNav({ links }) {
         <Link
           key={index}
           href={link.href}
-          isActive={link.isActive}
           isNextLink={link.isNextLink}
-          className={`text-sm ${link.isActive ? "text-stone-900 dark:text-stone-100" : ""}`}
+          active={link.isActive}
+          className="text-sm"
         >
           {link.name}
         </Link>

@@ -27,8 +27,8 @@ export default function Header() {
 
   return (
     <div className="flex justify-between items-center">
-      <h1 className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 font-semibold">
-        <Link href="/" isNextLink={true} isActive={pathname === "/" ? true : undefined}>
+      <h1 className="text-sm md:text-base text-[var(--ink-main)] font-semibold">
+        <Link href="/" isNextLink={true} active={pathname === "/"}>
           paul fomitchev
         </Link>
       </h1>
@@ -36,7 +36,7 @@ export default function Header() {
         <HorizontalNav links={links} />
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-lg text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition-colors"
+          className="p-2 rounded-lg text-[var(--ink-muted)] hover:text-[var(--ink-strong)] hover:bg-[var(--surface-tint)] transition-colors"
           aria-label="Toggle theme"
         >
           {theme === "dark" ? (

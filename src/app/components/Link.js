@@ -5,100 +5,45 @@ import NextLink from "next/link";
 export default function Link({
   className = "",
   href,
-  isActive,
   isNextLink,
+  active = false,
   children,
 }) {
+  const activeStyles = active
+    ? "before:-translate-x-1 before:text-[var(--ink-bracket-strong)] after:translate-x-1 after:text-[var(--ink-bracket-strong)]"
+    : "";
+
   const baseStyles = `
-    relative
     inline-flex items-center
-    text-stone-700 dark:text-stone-300
+    text-[var(--ink-main)]
     transition-all duration-300
-    ${
-      isActive === true
-        ? `
-      after:absolute
-      after:left-0
-      after:bottom-0
-      after:h-[1px]
-      after:w-full
-      after:bg-stone-300 dark:after:bg-stone-600
-      after:z-[1]
-    `
-        : isActive === false
-        ? `
-      before:absolute
-      before:left-0
-      before:bottom-0
-      before:h-[1px]
-      before:w-full
-      before:bg-stone-800 dark:before:bg-stone-300
-      before:opacity-0
-      before:z-[2]
-      hover:before:opacity-100
-      hover:text-stone-900 dark:hover:text-stone-100
-      hover:before:[animation:sweep_2s_ease-in-out_infinite]
-    `
-        : `
-      after:absolute
-      after:left-0
-      after:bottom-0
-      after:h-[1px]
-      after:w-full
-      after:bg-stone-300 dark:after:bg-stone-600
-      after:z-[1]
-      before:absolute
-      before:left-0
-      before:bottom-0
-      before:h-[1px]
-      before:w-full
-      before:bg-stone-800 dark:before:bg-stone-300
-      before:opacity-0
-      before:z-[2]
-      hover:before:opacity-100
-      hover:text-stone-900 dark:hover:text-stone-100
-      hover:before:[animation:sweep_2s_ease-in-out_infinite]
-    `
-    }
+    hover:text-[var(--ink-main)]
+    before:inline-block before:content-['['] before:mr-[0.2em]
+    before:text-[var(--ink-bracket)]
+    before:transition-all before:duration-300
+    hover:before:-translate-x-1
+    hover:before:text-[var(--ink-bracket-strong)]
+    after:inline-block after:content-[']'] after:ml-[0.2em]
+    after:text-[var(--ink-bracket)]
+    after:transition-all after:duration-300
+    hover:after:translate-x-1
+    hover:after:text-[var(--ink-bracket-strong)]
+    ${activeStyles}
     ${className}
   `.trim();
 
-  return (
-    <>
-      <style jsx global>{`
-        @keyframes sweep {
-          0% {
-            transform: scaleX(0);
-            transform-origin: left;
-          }
-          50% {
-            transform: scaleX(1);
-            transform-origin: left;
-          }
-          50.1% {
-            transform: scaleX(1);
-            transform-origin: right;
-          }
-          100% {
-            transform: scaleX(0);
-            transform-origin: right;
-          }
-        }
-      `}</style>
-      {isNextLink ? (
-        <NextLink href={href} className={baseStyles}>
-          {children}
-        </NextLink>
-      ) : (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={baseStyles}
-        >
-          {children}
-        </a>
-      )}
-    </>
+  return isNextLink ? (
+    <NextLink href={href} className={baseStyles}>
+      {children}
+    </NextLink>
+  ) : (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={baseStyles}
+    >
+      {children}
+    </a>
   );
 }

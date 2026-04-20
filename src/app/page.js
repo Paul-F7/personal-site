@@ -14,8 +14,8 @@ export default function About() {
   return (
     <div className="flex flex-col font-extralight">
       <ul className="grid gap-4 text-sm md:text-base">
-        <li className="group flex flex-col gap-3 pl-4 relative hover:translate-x-1 transition-transform duration-200">
-          <div className="absolute left-0 top-[10px] w-[6px] h-[6px] bg-stone-800 dark:bg-stone-200 rotate-45 transform transition-all duration-300 group-hover:rotate-90 group-hover:scale-110" />
+        <li className="flex flex-col gap-3 pl-4 relative">
+          <div className="absolute left-0 top-[10px] w-[6px] h-[6px] bg-stone-800 dark:bg-stone-200 rounded-full" />
           <span className="text-stone-600 dark:text-stone-400 italic font-medium">
             currently:
           </span>
@@ -58,8 +58,8 @@ export default function About() {
             </li>
           </ul>
         </li>
-        <li className="group flex flex-col gap-3 pl-4 relative hover:translate-x-1 transition-transform duration-200">
-          <div className="absolute left-0 top-[10px] w-[6px] h-[6px] bg-stone-800 dark:bg-stone-200 rotate-45 transform transition-all duration-300 group-hover:rotate-90 group-hover:scale-110" />
+        <li className="flex flex-col gap-3 pl-4 relative">
+          <div className="absolute left-0 top-[10px] w-[6px] h-[6px] bg-stone-800 dark:bg-stone-200 rounded-full" />
           <span className="text-stone-600 dark:text-stone-400 italic font-medium">
             previously:
           </span>
@@ -90,8 +90,8 @@ export default function About() {
             </li>
           </ul>
         </li>
-        <li className="group flex flex-col gap-3 pl-4 relative hover:translate-x-1 transition-transform duration-200">
-          <div className="absolute left-0 top-[10px] w-[6px] h-[6px] bg-stone-800 dark:bg-stone-200 rotate-45 transform transition-all duration-300 group-hover:rotate-90 group-hover:scale-110" />
+        <li className="flex flex-col gap-3 pl-4 relative">
+          <div className="absolute left-0 top-[10px] w-[6px] h-[6px] bg-stone-800 dark:bg-stone-200 rounded-full" />
           <span className="text-stone-600 dark:text-stone-400 italic font-medium">
             what i&apos;ve built:
           </span>
@@ -128,8 +128,12 @@ export default function About() {
 
       <NextLink
         href="/projects"
-        className="text-center mt-8 py-4 px-6 rounded-lg border border-stone-400 dark:border-stone-600 bg-stone-50/80 dark:bg-stone-900/80 text-stone-600 dark:text-stone-400 transform transition-all duration-300 font-semibold text-base md:text-lg hover:scale-[1.02] active:scale-[0.98] shadow-sm backdrop-blur-sm"
+        className="group relative block text-center mt-8 py-6 px-8 font-semibold text-base md:text-lg text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300 rounded-md border border-stone-300/70 dark:border-stone-700/70 bg-stone-50/60 dark:bg-stone-900/60 shadow-sm backdrop-blur-sm hover:shadow-md"
       >
+        <span className="pointer-events-none absolute -top-[2px] -left-[2px] w-8 h-8 border-t-[3px] border-l-[3px] border-[var(--ink-bracket)] transition-all duration-300 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:border-[var(--ink-bracket-strong)]" />
+        <span className="pointer-events-none absolute -top-[2px] -right-[2px] w-8 h-8 border-t-[3px] border-r-[3px] border-[var(--ink-bracket)] transition-all duration-300 group-hover:translate-x-2 group-hover:-translate-y-2 group-hover:border-[var(--ink-bracket-strong)]" />
+        <span className="pointer-events-none absolute -bottom-[2px] -left-[2px] w-8 h-8 border-b-[3px] border-l-[3px] border-[var(--ink-bracket)] transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2 group-hover:border-[var(--ink-bracket-strong)]" />
+        <span className="pointer-events-none absolute -bottom-[2px] -right-[2px] w-8 h-8 border-b-[3px] border-r-[3px] border-[var(--ink-bracket)] transition-all duration-300 group-hover:translate-x-2 group-hover:translate-y-2 group-hover:border-[var(--ink-bracket-strong)]" />
         View My Projects
       </NextLink>
     </div>

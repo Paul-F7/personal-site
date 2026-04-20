@@ -1,7 +1,12 @@
-import { Linkedin, Github, Mail, CodeXml } from "lucide-react";
+import { Linkedin, Github, Mail, Twitter } from "lucide-react";
 
 export default function Footer({ className }) {
   const links = [
+    {
+      name: "x",
+      href: "https://x.com/PaulFomitchev",
+      icon: Twitter,
+    },
     {
       name: "github",
       href: "https://github.com/PAul-F7",
@@ -17,11 +22,6 @@ export default function Footer({ className }) {
       href: "mailto:paul.fomitchev@uwaterloo.ca",
       icon: Mail,
     },
-    {
-      name: "repo",
-      href: "https://github.com/Paul-F7/personal-site",
-      icon: CodeXml,
-    },
   ];
 
   return (
@@ -35,17 +35,13 @@ export default function Footer({ className }) {
             <a
               key={index}
               href={link.href}
-              className="group flex items-center hover:text-neutral-800 dark:hover:text-neutral-200"
+              className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-200"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={link.name}
             >
               {link.icon && (
-                <>
-                  <link.icon className="w-5 h-5 hover:scale-110 md:hover:scale-110 transition-transform duration-500 ease-out" />
-                  <span className="hidden md:inline-block md:w-0 md:overflow-hidden md:group-hover:w-auto md:group-hover:ml-2 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 ease-out">
-                    {link.name}
-                  </span>
-                </>
+                <link.icon className="w-6 h-6 hover:scale-110 md:hover:scale-110 transition-transform duration-500 ease-out" />
               )}
               {!link.icon && <span>{link.name}</span>}
             </a>
