@@ -128,7 +128,7 @@ export default function About() {
 
       <NextLink
         href="/projects"
-        className="group relative block text-center mt-8 py-6 px-8 font-semibold text-base md:text-lg text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300 rounded-md border border-stone-300/70 dark:border-stone-700/70 bg-stone-50/60 dark:bg-stone-900/60 shadow-sm backdrop-blur-sm hover:shadow-md"
+        className="group relative block text-center mt-8 py-6 px-9 font-semibold text-xl md:text-2xl text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300"
       >
         <span className="pointer-events-none absolute -top-[2px] -left-[2px] w-8 h-8 border-t-[3px] border-l-[3px] border-[var(--ink-bracket)] transition-all duration-300 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:border-[var(--ink-bracket-strong)]" />
         <span className="pointer-events-none absolute -top-[2px] -right-[2px] w-8 h-8 border-t-[3px] border-r-[3px] border-[var(--ink-bracket)] transition-all duration-300 group-hover:translate-x-2 group-hover:-translate-y-2 group-hover:border-[var(--ink-bracket-strong)]" />
