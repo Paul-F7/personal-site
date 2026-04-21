@@ -128,13 +128,22 @@ export default function About() {
 
       <NextLink
         href="/projects"
-        className="group relative block text-center mt-8 py-6 px-9 font-semibold text-xl md:text-2xl text-stone-700 dark:text-stone-300 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-300"
+        className="group mt-10 flex w-full items-center justify-between rounded-xl border border-stone-900/10 dark:border-stone-100/10 bg-transparent px-6 py-6 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-stone-900/30 dark:hover:border-stone-100/30"
       >
-        <span className="pointer-events-none absolute -top-[2px] -left-[2px] w-8 h-8 border-t-[3px] border-l-[3px] border-[var(--ink-bracket)] transition-all duration-300 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:border-[var(--ink-bracket-strong)]" />
-        <span className="pointer-events-none absolute -top-[2px] -right-[2px] w-8 h-8 border-t-[3px] border-r-[3px] border-[var(--ink-bracket)] transition-all duration-300 group-hover:translate-x-2 group-hover:-translate-y-2 group-hover:border-[var(--ink-bracket-strong)]" />
-        <span className="pointer-events-none absolute -bottom-[2px] -left-[2px] w-8 h-8 border-b-[3px] border-l-[3px] border-[var(--ink-bracket)] transition-all duration-300 group-hover:-translate-x-2 group-hover:translate-y-2 group-hover:border-[var(--ink-bracket-strong)]" />
-        <span className="pointer-events-none absolute -bottom-[2px] -right-[2px] w-8 h-8 border-b-[3px] border-r-[3px] border-[var(--ink-bracket)] transition-all duration-300 group-hover:translate-x-2 group-hover:translate-y-2 group-hover:border-[var(--ink-bracket-strong)]" />
-        View My Projects
+        <span className="text-base md:text-lg font-normal tracking-tight text-stone-800 dark:text-stone-200">
+          View all projects
+        </span>
+        <span
+          aria-hidden
+          className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-stone-200/70 dark:bg-stone-800/60 text-stone-700 dark:text-stone-300 transition-colors duration-300 ease-out group-hover:bg-stone-300/80 dark:group-hover:bg-stone-700/70"
+        >
+          <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out group-hover:translate-x-full">
+            →
+          </span>
+          <span className="absolute inset-0 flex items-center justify-center -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0">
+            →
+          </span>
+        </span>
       </NextLink>
     </div>
   );

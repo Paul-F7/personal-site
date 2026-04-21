@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
       <body className={GeistMono.className}>
         <ThemeProvider>
           <SplashCursor />
-          <main className="relative flex justify-center font-extralight min-h-screen selection:bg-yellow-200 dark:selection:bg-yellow-800">
+          <main className="relative flex justify-center font-extralight min-h-screen">
             <div className="flex flex-col gap-4 w-full md:max-w-[540px] m-6 md:m-20 text-neutral-500 dark:text-neutral-400 md:mt-[60px]">
               <Header />
               {children}
