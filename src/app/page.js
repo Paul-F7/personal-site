@@ -32,6 +32,14 @@ export default function About() {
                 </Link>
               </span>
             </li>
+          </ul>
+        </li>
+        <li className="flex flex-col gap-3 pl-4 relative">
+          <div className="absolute left-0 top-[10px] w-[6px] h-[6px] bg-stone-800 dark:bg-stone-200 rounded-full" />
+          <span className="text-stone-600 dark:text-stone-400 italic font-medium">
+            previously:
+          </span>
+          <ul className="grid gap-1.5 pl-4">
             <li className="relative flex items-center gap-4 group/item">
               <span className="absolute left-[-20px] top-0 text-stone-500 dark:text-stone-500">
                 &#8627;
@@ -44,26 +52,6 @@ export default function About() {
                 </Link>
               </span>
             </li>
-            <li className="relative flex items-center gap-4 group/item">
-              <span className="absolute left-[-20px] top-0 text-stone-500 dark:text-stone-500">
-                &#8627;
-              </span>
-              <span className="text-stone-600 dark:text-stone-400 flex items-center gap-1.5">
-                Building{" "}
-                <Image src={FlavorFlickLogo} alt="FlavorFlick" width={18} height={18} className="inline rounded-sm" />
-                <Link href="https://flavorflick.ca/" className="font-medium">
-                  FlavorFlick
-                </Link>
-              </span>
-            </li>
-          </ul>
-        </li>
-        <li className="flex flex-col gap-3 pl-4 relative">
-          <div className="absolute left-0 top-[10px] w-[6px] h-[6px] bg-stone-800 dark:bg-stone-200 rounded-full" />
-          <span className="text-stone-600 dark:text-stone-400 italic font-medium">
-            previously:
-          </span>
-          <ul className="grid gap-1.5 pl-4">
             <li className="relative flex items-center gap-4 group/item">
               <span className="absolute left-[-20px] top-0 text-stone-500 dark:text-stone-500">
                 &#8627;
@@ -101,6 +89,15 @@ export default function About() {
                 &#8627;
               </span>
               <span className="text-stone-600 dark:text-stone-400">
+                <Image src={FlavorFlickLogo} alt="FlavorFlick" width={18} height={18} className="inline rounded-sm mr-1 align-middle" />
+                <Link href="https://flavorflick.ca/" className="font-medium">FlavorFlick</Link> — Tinder-style AI recipe recommendation app, deployed to App Store
+              </span>
+            </li>
+            <li className="relative flex items-start gap-4 group/item">
+              <span className="absolute left-[-20px] top-0 text-stone-500 dark:text-stone-500">
+                &#8627;
+              </span>
+              <span className="text-stone-600 dark:text-stone-400">
                 <Image src={FeelifyLogo} alt="Feelify" width={18} height={18} className="inline rounded-sm mr-1 align-middle" />
                 <Link href="https://feelify.paulfom.ca" className="font-medium">Feelify</Link> — ML song mood detection app, predicting emotion from mp3 files
               </span>
@@ -112,14 +109,6 @@ export default function About() {
               <span className="text-stone-600 dark:text-stone-400">
                 <Image src={HandInHandLogo} alt="Hand in Hand" width={18} height={18} className="inline rounded-sm mr-1 align-middle" />
                 <Link href="https://handinhand.paulfom.ca" className="font-medium">Hand in Hand</Link> — Duolingo for ASL with live gesture feedback
-              </span>
-            </li>
-            <li className="relative flex items-start gap-4 group/item">
-              <span className="absolute left-[-20px] top-0 text-stone-500 dark:text-stone-500">
-                &#8627;
-              </span>
-              <span className="text-stone-600 dark:text-stone-400">
-                computer vision <Link href="https://github.com/Paul-F7/cv-sudokusolver" className="font-medium">Sudoku Solver</Link> with 99%+ accuracy
               </span>
             </li>
           </ul>
