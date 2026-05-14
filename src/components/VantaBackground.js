@@ -20,6 +20,9 @@ export default function VantaBackground() {
           minHeight: 200.0,
           minWidth: 200.0,
           scale: 1.0,
+          skyColor: 0xacff,
+          cloudColor: 0x6088d4,
+          speed: 1,
           texturePath: "/noise.png",
         })
       );
