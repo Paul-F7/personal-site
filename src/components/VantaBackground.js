@@ -20,8 +20,6 @@ export default function VantaBackground() {
           minHeight: 200.0,
           minWidth: 200.0,
           scale: 1.0,
-          backgroundColor: 0x000000,
-          backgroundAlpha: 0,
           texturePath: "/noise.png",
         })
       );
@@ -41,8 +39,6 @@ export default function VantaBackground() {
         left: 0,
         width: "100%",
         height: "100%",
-        overflow: "hidden",
-        background: "transparent",
         zIndex: -1,
       }}
     />
