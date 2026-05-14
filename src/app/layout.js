@@ -1,52 +1,25 @@
-import { GeistMono } from "geist/font/mono";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import ThemeProvider from "./components/ThemeProvider";
-import SplashCursor from "./components/SplashCursor";
-import FlavorFlickScreenshot from "../../assets/flavorflick-screenshot.png";
-import FeelifyScreenshot from "../../assets/feelify-screenshot.png";
-import HandInHandScreenshot from "../../assets/handinhand-screenshot.png";
-import SudokuScreenshot from "../../assets/sudokusolver-screenshot.png";
-import KinKitchenScreenshot from "../../assets/kinkitchen-screenshot.png";
+import VantaLoader from "./VantaLoader";
 
 export const metadata = {
   title: "Paul Fomitchev",
   description: "Paul Fomitchev's personal portfolio",
 };
 
-const projectImages = [
-  FlavorFlickScreenshot.src,
-  FeelifyScreenshot.src,
-  HandInHandScreenshot.src,
-  SudokuScreenshot.src,
-  KinKitchenScreenshot.src,
-];
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{
-          __html: `(function(){var t=localStorage.getItem('theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark');})();`
-        }} />
-        {projectImages.map((src) => (
-          <link key={src} rel="prefetch" href={src} as="image" />
-        ))}
-      </head>
-      <body className={GeistMono.className}>
-        <ThemeProvider>
-          <SplashCursor />
-          <main className="relative flex justify-center font-extralight min-h-screen">
-            <div className="flex flex-col gap-4 w-full md:max-w-[540px] m-6 md:m-20 text-neutral-500 dark:text-neutral-400 md:mt-[60px]">
-              <Header />
-              {children}
-              <Footer />
-            </div>
-          </main>
-        </ThemeProvider>
-        <Analytics />
+    <html lang="en">
+      <body style={{ margin: 0 }}>
+        <div
+          id="vanta-bg"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: -1,
+          }}
+        />
+        {children}
+        <VantaLoader />
       </body>
     </html>
   );
