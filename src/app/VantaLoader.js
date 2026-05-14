@@ -24,14 +24,24 @@ export default function VantaLoader() {
       {vantaReady && (
         <Script id="vanta-init" strategy="afterInteractive">
           {`
-            window.VANTA.CLOUDS({
-              el: "#vanta-bg",
-              mouseControls: false,
-              touchControls: true,
-              gyroControls: false,
-              minHeight: 200.00,
-              minWidth: 200.00
-            });
+            (function () {
+              var effect = window.VANTA.CLOUDS({
+                el: "#vanta-bg",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.0,
+                scaleMobile: 1.0
+              });
+
+              // Force vanta to remeasure after the mobile URL bar settles
+              setTimeout(function () { if (effect && effect.resize) effect.resize(); }, 200);
+              window.addEventListener("resize", function () {
+                if (effect && effect.resize) effect.resize();
+              });
+            })();
           `}
         </Script>
       )}

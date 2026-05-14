@@ -14,7 +14,10 @@ export default function RootLayout({ children }) {
           id="vanta-bg"
           style={{
             position: "fixed",
-            inset: 0,
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100dvh",
             zIndex: -1,
           }}
         />
