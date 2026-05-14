@@ -4,9 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
 import CLOUDS2 from "vanta/dist/vanta.clouds2.min";
 
-const fallbackBackground =
-  "linear-gradient(180deg, #7bc7f2 0%, #bfe0f4 48%, #fbfaf5 100%)";
-
 export default function VantaBackground() {
   const [vantaEffect, setVantaEffect] = useState(null);
   const myRef = useRef(null);
@@ -23,17 +20,11 @@ export default function VantaBackground() {
           minHeight: 200.0,
           minWidth: 200.0,
           scale: 1.0,
-          skyColor: 0x7bc7f2,
-          cloudColor: 0xc9dcf0,
-          lightColor: 0xffffff,
+          backgroundColor: 0x000000,
+          backgroundAlpha: 0,
           texturePath: "/noise.png",
         })
       );
-    }
-
-    const canvas = myRef.current?.querySelector(".vanta-canvas");
-    if (canvas) {
-      canvas.style.opacity = "0.72";
     }
 
     return () => {
@@ -51,7 +42,7 @@ export default function VantaBackground() {
         width: "100%",
         height: "100%",
         overflow: "hidden",
-        background: fallbackBackground,
+        background: "transparent",
         zIndex: -1,
       }}
     />
