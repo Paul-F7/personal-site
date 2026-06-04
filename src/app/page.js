@@ -27,7 +27,7 @@ export default function About() {
               </span>
               <span className="text-stone-600 dark:text-stone-400 flex items-center gap-1.5">
                 Engineering @{" "}
-                <Image src={EdexiaLogo} alt="Edexia" width={18} height={18} className="inline rounded-sm" />
+                <Image src={EdexiaLogo} alt="Edexia" width={18} height={18} className="inline rounded-sm bg-white p-[1px]" />
                 <Link href="https://www.edexia.com/" className="font-medium">
                   Edexia
                 </Link>
