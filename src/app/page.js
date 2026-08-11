@@ -9,6 +9,7 @@ import OrbitalLogo from "../../assets/orbital.png";
 import VexLogo from "../../assets/vex.png";
 import FeelifyLogo from "../../assets/feelify.webp";
 import HandInHandLogo from "../../assets/handinhand.png";
+import EdexiaLogo from "../../assets/edexia.png";
 
 export default function About() {
   return (
@@ -20,6 +21,18 @@ export default function About() {
             currently:
           </span>
           <ul className="grid gap-1.5 pl-4">
+            <li className="relative flex items-center gap-4 group/item">
+              <span className="absolute left-[-20px] top-0 text-stone-500 dark:text-stone-500">
+                &#8627;
+              </span>
+              <span className="text-stone-600 dark:text-stone-400 flex items-center gap-1.5">
+                Engineering @{" "}
+                <Image src={EdexiaLogo} alt="Edexia" width={18} height={18} className="inline rounded-sm" />
+                <Link href="https://www.edexia.com/" className="font-medium">
+                  Edexia
+                </Link>
+              </span>
+            </li>
             <li className="relative flex items-center gap-4 group/item">
               <span className="absolute left-[-20px] top-0 text-stone-500 dark:text-stone-500">
                 &#8627;
